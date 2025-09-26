@@ -1,0 +1,17 @@
+local TeleportService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- Extracted from the provided link: https://www.roblox.com/share?code=e3f664c69d80a54bb0f6085fc08c20ce&type=Server
+local placeId = 0 -- Replace with the actual Place ID of your game
+local privateServerId = "e3f664c69d80a54bb0f6085fc08c20ce"
+
+-- Function to teleport the player to the private server
+local function teleportToPrivateServer()
+    pcall(function()
+        TeleportService:TeleportToPrivateServer(placeId, privateServerId, {player})
+    end)
+end
+
+-- Execute the teleport
+teleportToPrivateServer()
